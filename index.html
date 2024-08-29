@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlaneHub og Gopniks</title>
+    <title>Gopniks</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #111; /* Fælles baggrundsfarve */
-            color: #f9f9f9; /* Fælles tekstfarve */
+            background-color: #2B2B2B; /* Mørk grå baggrund */
+            color: #E0E0E0; /* Lys grå tekst */
             line-height: 1.6;
             text-align: center;
         }
         header {
-            background-color: #f9a825; /* Orange baggrundsfarve */
-            color: #333; /* Sort tekstfarve */
+            background-color: #D32F2F; /* Rød baggrundsfarve */
+            color: #FFFFFF; /* Hvid tekstfarve */
             padding: 20px;
         }
         header h1 {
             margin: 0;
             font-size: 36px;
+            font-weight: bold;
         }
         .header-container {
             display: flex;
@@ -33,28 +34,32 @@
             max-width: 150px;
             height: auto;
             margin-right: 20px;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
         }
         nav {
-            background-color: #333;
+            background-color: #212121; /* Sort baggrundsfarve */
             padding: 15px 0;
             text-align: center;
             margin-bottom: 20px;
         }
         nav a {
-            color: #f9f9f9;
+            color: #FFFFFF; /* Hvid tekstfarve */
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
+            font-weight: bold;
         }
         nav a:hover {
             text-decoration: underline;
+            color: #D32F2F; /* Rød ved hover */
         }
         section {
             padding: 20px;
-            background-color: #333; /* Fælles baggrundsfarve */
+            background-color: #424242; /* Mørk grå baggrundsfarve */
             margin-bottom: 20px;
             border-radius: 5px;
-            color: #f9f9f9;
+            color: #E0E0E0; /* Lys grå tekstfarve */
         }
         .bio {
             font-size: 18px;
@@ -69,12 +74,12 @@
         .image-gallery img {
             width: 100%;
             height: auto;
-            border: 2px solid #fff;
+            border: 3px solid #D32F2F; /* Rød kant om billederne */
             cursor: pointer;
         }
         footer {
-            background-color: #f9a825;
-            color: #333;
+            background-color: #D32F2F; /* Rød baggrundsfarve */
+            color: #FFFFFF; /* Hvid tekstfarve */
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -95,15 +100,14 @@
 
 <header>
     <div class="header-container">
-        <img src="https://i.ibb.co/vdwxfbY/ee45d563-25a6-4c2a-8171-ce5b2e199fe3.jpg" alt="PlaneHub Logo" class="logo">
-        <h1>PlaneHub og Gopniks</h1>
+        <img src="https://i.ibb.co/vdwxfbY/ee45d563-25a6-4c2a-8171-ce5b2e199fe3.jpg" alt="Gopnik Logo" class="logo">
+        <h1>Gopniks</h1>
     </div>
-    <p>Velkommen til PlaneHub og Gopniks - dit hub for luftfart og russisk kultur!</p>
+    <p>Velkommen til Gopnik kulturen - dit hub for russisk kultur!</p>
 </header>
 
 <nav>
     <a href="#" class="link" data-target="omos">Om Os</a>
-    <a href="#" class="link" data-target="billeder">Plane Billeder</a>
     <a href="#" class="link" data-target="gopnik-billeder">Gopnik Billeder</a>
     <a href="#" class="link" data-target="videoer">Videoer</a>
     <a href="#" class="link" data-target="kontakt">Kontakt Os</a>
@@ -111,7 +115,7 @@
 
 <section id="omos">
     <h2>Om Os</h2>
-    <p>Vi er dedikeret til at levere de seneste nyheder, billeder og videoer fra både luftfartsverdenen og Gopnik-kulturen. Vores passion for flyvning og russisk kultur driver os til at levere det bedste indhold til vores brugere. Venligt hilsen the planehub team aka Oli og Alf</p>
+    <p>Vi er dedikeret til at levere de seneste nyheder, billeder og videoer fra Gopnik-kulturen. Vores passion for russisk kultur driver os til at levere det bedste indhold til vores brugere. Venligt hilsen de to gopniks</p>
 </section>
 
 <section id="billeder" class="hidden">
@@ -153,11 +157,11 @@
 
 <section id="kontakt" class="hidden">
     <h2>Kontakt Os</h2>
-    <p>Telefon nummer +4530959726 (SPAM!!).</p>
+    <p>Gopniks@russer.com.</p>
 </section>
 
 <footer>
-    <p>&copy; 2024 PlaneHub og Gopniks. Alle rettigheder forbeholdes.</p>
+    <p>&copy; 2024 Gopniks. Alle rettigheder forbeholdes.</p>
 </footer>
 
 <script>
