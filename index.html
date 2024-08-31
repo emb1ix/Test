@@ -198,49 +198,7 @@
             width: calc(100% - 20px);
             padding: 8px;
             margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-section">
-        <h2>Login</h2>
-        <form id="login-form">
-            <label for="username">Brugernavn:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Kodeord:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Log ind</button>
-        </form>
-        <button id="create-profile-btn">Opret profil</button>
-    </div>
 
-    <div id="create-profile-section" class="hidden">
-        <h2>Opret Profil</h2>
-        <form id="create-profile-form">
-            <label for="new-username">Brugernavn:</label>
-            <input type="text" id="new-username" name="new-username" required>
-            <label for="new-password">Kodeord:</label>
-            <input type="password" id="new-password" name="new-password" required>
-            <button type="submit">Opret</button>
-        </form>
-    </div>
-
-    <script>
-        document.getElementById('create-profile-btn').addEventListener('click', function() {
-            document.querySelector('.login-section').classList.add('hidden');
-            document.getElementById('create-profile-section').classList.remove('hidden');
-        });
-
-        document.getElementById('create-profile-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Profil oprettet!');
-
-            // Her kan du tilføje logik til at håndtere profiloprettelsen
-
-            document.getElementById('create-profile-section').classList.add('hidden');
-            document.querySelector('.login-section').classList.remove('hidden');
         });
     </script>
 </body>
@@ -309,6 +267,102 @@
             <label for="password">Adgangskode:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
+            <!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Sektion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .login-section, #create-profile-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-section">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Brugernavn:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Kodeord:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Log ind</button>
+        </form>
+        <button id="create-profile-btn">Opret profil</button>
+    </div>
+
+    <div id="create-profile-section" class="hidden">
+        <h2>Opret Profil</h2>
+        <form id="create-profile-form">
+            <label for="new-username">Brugernavn:</label>
+            <input type="text" id="new-username" name="new-username" required>
+            <label for="new-password">Kodeord:</label>
+            <input type="password" id="new-password" name="new-password" required>
+            <button type="submit">Opret</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('create-profile-btn').addEventListener('click', function() {
+            document.querySelector('.login-section').classList.add('hidden');
+            document.getElementById('create-profile-section').classList.remove('hidden');
+        });
+
+        document.getElementById('create-profile-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Profil oprettet!');
+
+            // Her kan du tilføje logik til at håndtere profiloprettelsen
+
+            document.getElementById('create-profile-section').classList.add('hidden');
+            document.querySelector('.login-section').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
+
         </div>
     </div>
 </section>
