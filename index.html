@@ -151,13 +151,6 @@
         .login-form button:hover {
             background-color: #E53935;
         }
-        .toggle-link {
-            color: #D32F2F;
-            cursor: pointer;
-            text-decoration: underline;
-            margin-top: 10px;
-            display: inline-block;
-        }
     </style>
 </head>
 <body>
@@ -167,7 +160,7 @@
         <img src="https://i.postimg.cc/3J2PRrf4/dbf851fb-5544-4f95-8d1f-267bd83f9f93.jpg" alt="Gopnik Logo" class="logo">
         <h1>SlavHub</h1>
     </div>
-    <a href="#" class="login-btn" data-target="login">Login</a>
+    <a href="#login" class="login-btn">Login</a>
     <p>Velkommen til SlavHub - dit hub for Gopniks og russisk kultur!</p>
 </header>
 
@@ -214,13 +207,12 @@
 <section id="login" class="hidden">
     <div class="login-container">
         <div class="login-form">
-            <h2 id="form-title">Login</h2>
+            <h2>Login</h2>
             <label for="username">Brugernavn:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Adgangskode:</label>
             <input type="password" id="password" name="password" required>
-            <button id="submit-btn" type="submit">Login</button>
-            <a id="toggle-form" class="toggle-link">Opret en profil</a>
+            <button type="submit">Login</button>
         </div>
     </div>
 </section>
@@ -228,12 +220,34 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const links = document.querySelectorAll('.link');
-        const loginBtn = document.querySelector('.login-btn');
-        const sections = document.querySelectorAll('section');
-        const submitBtn = document.getElementById('submit-btn');
-        const toggleForm = document.getElementById('toggle-form');
-        const formTitle = document.getElementById('form-title');
-
-        // Visning af sektioner baseret på navigation
         links.forEach(link => {
-           
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        const loginBtn = document.querySelector('.login-btn');
+        loginBtn.addEventListener('click', function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (section.id === 'login') {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</
