@@ -18,6 +18,7 @@
             background-color: #D32F2F; /* Rød baggrundsfarve */
             color: #FFFFFF; /* Hvid tekstfarve */
             padding: 20px;
+            position: relative; /* For at placere login-knappen */
         }
         header h1 {
             margin: 0;
@@ -36,6 +37,22 @@
             margin-right: 20px;
             border-radius: 50%;
             border: 3px solid #FFFFFF;
+        }
+        .login-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #FFFFFF;
+            color: #D32F2F;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .login-btn:hover {
+            background-color: #f5f5f5;
         }
         nav {
             background-color: #212121; /* Sort baggrundsfarve */
@@ -95,6 +112,52 @@
             height: auto;
             margin-bottom: 10px;
         }
+        /* Tilføjet styling for login-siden */
+        .login-container {
+            margin-top: 50px;
+        }
+        .login-form {
+            display: inline-block;
+            text-align: left;
+            background-color: #424242;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .login-form h2 {
+            margin-top: 0;
+        }
+        .login-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #D32F2F;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #E53935;
+        }
+        .toggle-link {
+            color: #D32F2F;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -104,6 +167,7 @@
         <img src="https://i.postimg.cc/3J2PRrf4/dbf851fb-5544-4f95-8d1f-267bd83f9f93.jpg" alt="Gopnik Logo" class="logo">
         <h1>SlavHub</h1>
     </div>
+    <a href="#" class="login-btn" data-target="login">Login</a>
     <p>Velkommen til SlavHub - dit hub for Gopniks og russisk kultur!</p>
 </header>
 
@@ -123,16 +187,13 @@
     <h2>Billeder</h2>
     <div class="image-gallery">
         <div>
-                <img src="https://i.postimg.cc/Wb7pRtxj/Gopnik.jpg" alt="Gopnik 1">
-            </a>
+            <img src="https://i.postimg.cc/Wb7pRtxj/Gopnik.jpg" alt="Gopnik 1">
         </div>
         <div>
-                <img src="https://i.postimg.cc/50JkM9hd/Gopnik-2.jpg" alt="Gopnik 2">
-            </a>
+            <img src="https://i.postimg.cc/50JkM9hd/Gopnik-2.jpg" alt="Gopnik 2">
         </div>
         <div>
-                <img src="https://i.postimg.cc/x8xsHvcn/Gopnik-3.jpg" alt="Gopnik 3">
-            </a>
+            <img src="https://i.postimg.cc/x8xsHvcn/Gopnik-3.jpg" alt="Gopnik 3">
         </div>
     </div>
 </section>
@@ -149,25 +210,30 @@
         bedre kan du sende en mail til SlavHub48@gmail.com</h3>
 </section>
 
+<!-- Login Side -->
+<section id="login" class="hidden">
+    <div class="login-container">
+        <div class="login-form">
+            <h2 id="form-title">Login</h2>
+            <label for="username">Brugernavn:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Adgangskode:</label>
+            <input type="password" id="password" name="password" required>
+            <button id="submit-btn" type="submit">Login</button>
+            <a id="toggle-form" class="toggle-link">Opret en profil</a>
+        </div>
+    </div>
+</section>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const links = document.querySelectorAll('.link');
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const targetId = this.getAttribute('data-target');
-                const sections = document.querySelectorAll('section');
-                sections.forEach(section => {
-                    if (section.id === targetId) {
-                        section.classList.remove('hidden');
-                    } else {
-                        section.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    });
-</script>
+        const loginBtn = document.querySelector('.login-btn');
+        const sections = document.querySelectorAll('section');
+        const submitBtn = document.getElementById('submit-btn');
+        const toggleForm = document.getElementById('toggle-form');
+        const formTitle = document.getElementById('form-title');
 
-</body>
-</html>
+        // Visning af sektioner baseret på navigation
+        links.forEach(link => {
+           
