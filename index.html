@@ -164,6 +164,7 @@
             text-align: center;
             text-decoration: none;
             display: block;
+            cursor: pointer;
         }
         .admin-btn:hover {
             background-color: #333333;
@@ -220,7 +221,7 @@
             <img src="https://i.postimg.cc/R0VbkSkk/tmp-673f5ef6-2187-473d-af2a-9c2cf3d81004.jpg" alt="Gopnik 4">
         </div>
         <div>
-            <img src="https://i.postimg.cc/4NWc8X17/tmp-a09aca7c-6ad8-4bd0-b296-5df3d4d13713.jpg" alt="Gopnik 5">
+            <img src="https://i.postimg.cc/4NWc8X17/tmp-a09c04a4-7b36-40e2-bf00-fc8391c39213.jpg" alt="Gopnik 5">
         </div>
         <div>
             <img src="https://i.postimg.cc/x8xsHvcn/Gopnik-3.jpg" alt="Gopnik 6">
@@ -262,7 +263,7 @@
         <input type="password" id="password" name="password" required>
         <button type="submit">Login</button>
         <!-- Admin knap der fører til GitHub repository -->
-        <a href="https://github.com/emb1ix/gopnik" class="admin-btn">Admin</a>
+        <a href="#" class="admin-btn" id="admin-btn">Admin</a>
     </form>
 </section>
 
@@ -288,6 +289,16 @@
             section.classList.add('hidden');
         });
         document.getElementById('login').classList.remove('hidden');
+    });
+
+    document.getElementById('admin-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        let code = prompt("Indtast admin-koden:");
+        if (code === "4565") {
+            window.location.href = "https://github.com/emb1ix/gopnik";
+        } else {
+            alert("Forkert kode! Prøv igen.");
+        }
     });
 </script>
 
