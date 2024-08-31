@@ -13,6 +13,7 @@
             color: #E0E0E0; /* Lys grå tekst */
             line-height: 1.6;
             text-align: center;
+            padding-bottom: 60px; /* For at give plads til footeren */
         }
         header {
             background-color: #D32F2F; /* Rød baggrundsfarve */
@@ -99,10 +100,13 @@
             background-color: #D32F2F; /* Rød baggrundsfarve */
             color: #FFFFFF; /* Hvid tekstfarve */
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             position: fixed;
             width: 100%;
             bottom: 0;
+            left: 0;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
         }
         .footer-info {
             margin: 10px 0;
@@ -112,6 +116,9 @@
         }
         .footer-info p {
             margin: 5px 0;
+        }
+        .footer-visible {
+            transform: translateY(0);
         }
         .hidden {
             display: none;
@@ -226,14 +233,6 @@
     </div>
 </section>
 
-<footer>
+<footer id="footer">
     <div class="footer-info">
-        <h3>Om SlavHub</h3>
-        <p>SlavHub er dit go-to sted for at udforske den russiske gopnik kultur. Vi tilbyder billeder, videoer, og meget mere. Vi stræber efter at levere en autentisk oplevelse for alle kulturinteresserede.</p>
-        <h3>Kontakt</h3>
-        <p>For spørgsmål eller feedback, kontakt os på <a href="mailto:SlavHub48@gmail.com">SlavHub48@gmail.com</a></p>
-        <p>&copy; 2024 SlavHub. Alle rettigheder forbeholdes.</p>
-    </div>
-</footer>
-
-<script
+        <h3>Om
